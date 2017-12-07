@@ -1,0 +1,199 @@
+<head>
+
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css"
+    />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <span class="icon glyphicon line" data-toggle="modal" data-target="#myModal">
+                    <a>
+                        <i class="fa fa-plus-circle fa-4x" aria-hidden="true"></i>
+                    </a>
+                </span>
+
+                <!-- Modal -->
+                <div id="myModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add events</h4>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <div id="filterDate2">
+
+                                            <!-- Datepicker as text field -->
+                                            <div class="input-group date" data-date-format="dd.mm.yyyy">
+                                                <input type="text" class="form-control" placeholder="dd.mm.yyyy">
+                                                <div class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-th"></span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlInput1">Title</label>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="1st OA">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlSelect1">Type select</label>
+                                        <select class="form-control" id="exampleFormControlSelect1">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Content</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description content"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="addItem()">Save</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="item">
+                    <span class="icon glyphicon">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </span>
+                    <h2 class="date">2010/09/03
+                        <span class="tit">Filling Date</span>
+                    </h2>
+                    <dl class="timeline-series">
+                        <dt class="event-date">
+                            <span class="icon2 glyphicon"></span>2010/09/08
+                            <span class="event-tit">invoie</span>
+                        </dt>
+                        <dt class="event-date">
+                            <span class="icon2 glyphicon">
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                            </span>2010/10/03
+                            <span class="event-tit">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Paid</a>
+                            </span>
+                        </dt>
+                        <dd id="collapseThree" class="event-des panel-collapse collapse">
+                            Application Government Fee: $140
+                            <br/> Examination Government Fee: $360
+                            <br/> Fee for additional claims:
+                            <br/> Search Fee: $300(x/2)
+                            <br/> Attorney Fee: $11,200(+tax)
+                            <br/> Pay method: TT, Check, Credit Card
+                            <br/>
+                        </dd>
+                        <br class="clear">
+                    </dl>
+                </div>
+                <div class="item">
+                    <span class="icon glyphicon">
+                        <i class="fa fa-file-o" aria-hidden="true"></i>
+                    </span>
+                    <h2 class="date">2010/09/15
+                        <span class="tit">1st Office Action</span>
+                    </h2>
+                    <dl class="timeline-series">
+                        <dt class="event-date">
+                            <span class="icon2 glyphicon"></span>2010/11/18
+                            <span class="event-tit">Response OA</span>
+                        </dt>
+                        <dt class="event-date">
+                            <span class="icon2 glyphicon"></span>2010/11/21
+                            <span class="event-tit">invoie</span>
+                        </dt>
+                        <dt class="event-date">
+                            <span class="icon2 glyphicon">
+                                <i class="fa fa-money" aria-hidden="true"></i>
+                            </span>2010/11/25
+                            <span class="event-tit">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Paid</a>
+                            </span>
+                        </dt>
+                        <dd id="collapseTwo" class="event-des panel-collapse collapse">
+                            Attorney Fee: $4,300
+                            <br/> Transit Fee
+                            <br/> Pay method: TT, Check, Credit Card
+                            <br/>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="item">
+                    <span class="icon glyphicon">
+                        <i class="fa fa-camera-retro fa-1x"></i>
+                    </span>
+                    <h2 class="date">2011/02/03
+                        <span class="tit">Publish Date</a>
+                        </span>
+                        <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-placement="right" title="Publication Number">
+                            <i class="fa fa-cloud-upload" aria-hidden="true"></i>E-File</button>
+                    </h2>
+                    <dl class="timeline-series">
+                        <dt class="event-date">
+                            <span class="icon2 glyphicon"></span>2017/09/09
+                            <span class="event-tit">invoie</span>
+                        </dt>
+                        <dt class="event-date">
+                            <span class="icon2 glyphicon"></span>2017/09/09
+                            <span class="event-tit">
+                                <a href="#" data-toggle="tooltip" data-placement="right" title="E-File">Paid
+
+
+                                </a>
+                                <br>
+                            </span>
+                        </dt>
+                        <dd class="event-des"></dd>
+                    </dl>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(function () { $("[data-toggle='tooltip']").tooltip(); });
+
+        $('.input-group.date').datepicker({ format: "dd.mm.yyyy" });
+
+
+        function addItem(){
+	var div = document.getElementById("form-group");
+  var exampleFormControlInput1 = document.getElementById("exampleFormControlInput1");
+  var span = document.createElement("span");
+span.setAttribute('id',exampleFormControlInput1.value);
+ span.appendChild(document.createTextNode(exampleFormControlInput1.value));
+  div.appendChild(span);
+}
+
+    </script>
+
+</body>
+<!-- GLOBAL CORE SCRIPTS -->
